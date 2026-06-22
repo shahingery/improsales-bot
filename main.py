@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 import os
-TOKEN = os.environ.get("BOT_TOKEN", "8893438802:AAFbz9lOC4JL1lQkKPYkOIHW-pPEhGt6EXg")
+TOKEN = os.environ.get("BOT_TOKEN")
 print("BOT_TOKEN exists:", bool(TOKEN))
 print("BOT_TOKEN length:", len(TOKEN) if TOKEN else 0)
 print("BOT_TOKEN preview:", TOKEN[:10] if TOKEN else None)
@@ -17,7 +17,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📅 День 2 — Аналитика и управление", callback_data="day2")],
         [InlineKeyboardButton("📅 День 3 — Road Map и защита", callback_data="day3")],
     ]
-    with open("welcome.jpg", "rb") as photo:
+    with open("Welcome.jpg", "rb") as photo:
         await update.message.reply_photo(
             photo=photo,
             caption="Выбери день адаптации 👇",

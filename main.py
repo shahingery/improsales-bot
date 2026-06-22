@@ -3,7 +3,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 import os
-TOKEN = os.environ.get("BOT_TOKEN")
+TOKEN = os.environ.get("BOT_TOKEN", "8893438802:AAFbz9lOC4JL1lQkKPYkOIHW-pPEhGt6EXg")
+print("BOT_TOKEN exists:", bool(TOKEN))
+print("BOT_TOKEN length:", len(TOKEN) if TOKEN else 0)
+print("BOT_TOKEN preview:", TOKEN[:10] if TOKEN else None)
 
 logging.basicConfig(level=logging.INFO)
 

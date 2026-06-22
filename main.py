@@ -4,9 +4,6 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 
 import os
 TOKEN = os.environ.get("BOT_TOKEN")
-print("BOT_TOKEN exists:", bool(TOKEN))
-print("BOT_TOKEN length:", len(TOKEN) if TOKEN else 0)
-print("BOT_TOKEN preview:", TOKEN[:10] if TOKEN else None)
 
 logging.basicConfig(level=logging.INFO)
 
